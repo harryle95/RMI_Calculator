@@ -15,7 +15,7 @@ java CalculatorClient
 - Run Interractive Shell: 
 
 ```
-make run_live
+make shell
 ```
 
 - CleanUp - kill current background rmi registry and delete class files: 

@@ -1,4 +1,4 @@
-How to run the program: 
+# How to run the program: 
 
 - Run the server: 
 

@@ -44,7 +44,7 @@ To free all resources, call `make clean`. Sudo priviledge is required
 
 ## How the directory is structured
 
-`Server``, `Client`` and `Calculator`` interface and implementation classes are located in the root directory. `Operation` class defines
+`Server`, `Client` and `Calculator` interface and implementation classes are located in the root directory. `Operation` class defines
 the implementation of the four used operations. `TestOperation` performs unit testing with standard library modules. `JUnitTest` is not used
 because I use `Intellij` and wasn't sure if that is allowed for GradeScope. The `test` folder define the test cases for integration testing, with `test/single` the cases for a single client, and `test/client` the cases for multiple clients. Each test folder has a `run_test.sh` bash script which orchestrate the testing. 
 

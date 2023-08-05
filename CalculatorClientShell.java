@@ -33,7 +33,7 @@ public class CalculatorClientShell {
                         try {
                             if (token.equalsIgnoreCase("max")||
                                     token.equalsIgnoreCase("min")||
-                                    token.equalsIgnoreCase("lcd")||
+                                    token.equalsIgnoreCase("lcm")||
                                     token.equalsIgnoreCase("gcd")){
                                 c.pushOperation(token);
                             }else if (token.equalsIgnoreCase("pop")){

@@ -13,7 +13,7 @@ run: compile
 	java CalculatorClient 
 
 shell: compile 
-	java CalculatorClientShell
+	java CalculatorClient
 
 clean: 
 	python3 cleanUp.py

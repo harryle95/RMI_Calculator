@@ -2,9 +2,7 @@ import java.rmi.RemoteException;
 import java.util.EmptyStackException;
 import java.util.Stack;
 
-public class CalculatorImplementation
-        extends
-        java.rmi.server.UnicastRemoteObject
+public class CalculatorImplementation extends java.rmi.server.UnicastRemoteObject
         implements Calculator {
     
     public Stack<Integer> operands;
@@ -27,13 +25,13 @@ public class CalculatorImplementation
         if (operands.size()==1) return;
         int result;
         if (operator.equalsIgnoreCase("min"))
-            result = min();
+            result = min(operands);
         else if (operator.equalsIgnoreCase("max"))
-            result = max();
+            result = max(operands);
         else if (operator.equalsIgnoreCase("gcd"))
-            result = gcd();
+            result = gcd(operands);
         else if (operator.equalsIgnoreCase("lcm"))
-            result = lcm();
+            result = lcm(operands);
         else
             throw new RemoteException("Invalid operator: " + operator);
         pushValue(result);
@@ -64,7 +62,7 @@ public class CalculatorImplementation
     }
 
 
-    private int max(){
+    private int max(Stack<Integer> operands){
         int result = operands.pop();
         int temp;
         while (!(operands.isEmpty())){
@@ -76,7 +74,7 @@ public class CalculatorImplementation
         return result;
     }
 
-    private int min(){
+    private int min(Stack<Integer> operands){
         int result = operands.pop();
         int temp;
         while (!(operands.isEmpty())){
@@ -93,7 +91,7 @@ public class CalculatorImplementation
         return gcd(second, first%second);
     }
 
-    private int gcd(){
+    private int gcd(Stack<Integer> operands){
         int result = operands.pop();
         while (!(operands.isEmpty()))
             result = gcd(result, operands.pop());
@@ -104,7 +102,7 @@ public class CalculatorImplementation
         return first*second/gcd(first, second);
     }
 
-    private int lcm(){
+    private int lcm(Stack<Integer> operands){
         int result = operands.pop();
         while(!(operands.isEmpty()))
             result = lcm(result, operands.pop());

@@ -4,10 +4,9 @@ compile:
 registry:
 	rmiregistry &
 
-server: compile registry
+server: compile
 	rmic CalculatorImplementation
 	java CalculatorServer & 
-	clear 
 
 run: compile 
 	java CalculatorClient 

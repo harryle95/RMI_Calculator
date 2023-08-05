@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class CalculatorClientShell {
+public class CalculatorClient {
     private static final String pattern = "([^\\(]+)\\(([^\\)]*)\\)";
     private static String method;
     private static String argument;

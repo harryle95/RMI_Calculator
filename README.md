@@ -6,19 +6,13 @@
 make server 
 ```
 
-- Run the client: 
+- Run the client in shell mode (interractive input)
 
 ```
-java CalculatorClient 
+make shell 
 ```
 
-- Run Interractive Shell: 
-
-```
-make shell
-```
-
-- CleanUp - kill current background rmi registry and delete class files: 
+- CleanUp - kill current background process running rmi registry and server and delete class files (sudo privilege is required) 
 
 ```
 make clean 

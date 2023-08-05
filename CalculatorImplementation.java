@@ -62,7 +62,7 @@ public class CalculatorImplementation extends java.rmi.server.UnicastRemoteObjec
     }
 
 
-    private int max(Stack<Integer> operands){
+    public int max(Stack<Integer> operands){
         int result = operands.pop();
         int temp;
         while (!(operands.isEmpty())){
@@ -74,7 +74,7 @@ public class CalculatorImplementation extends java.rmi.server.UnicastRemoteObjec
         return result;
     }
 
-    private int min(Stack<Integer> operands){
+    public int min(Stack<Integer> operands){
         int result = operands.pop();
         int temp;
         while (!(operands.isEmpty())){
@@ -86,23 +86,23 @@ public class CalculatorImplementation extends java.rmi.server.UnicastRemoteObjec
         return result;
     }
 
-    private int gcd(int first, int second){
+    public int gcd(int first, int second){
         if (second == 0) return first;
         return gcd(second, first%second);
     }
 
-    private int gcd(Stack<Integer> operands){
+    public int gcd(Stack<Integer> operands){
         int result = operands.pop();
         while (!(operands.isEmpty()))
             result = gcd(result, operands.pop());
         return result;
     }
 
-    private int lcm(int first, int second){
+    public int lcm(int first, int second){
         return first*second/gcd(first, second);
     }
 
-    private int lcm(Stack<Integer> operands){
+    public int lcm(Stack<Integer> operands){
         int result = operands.pop();
         while(!(operands.isEmpty()))
             result = lcm(result, operands.pop());

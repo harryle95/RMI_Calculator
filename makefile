@@ -5,7 +5,6 @@ registry:
 	rmiregistry &
 
 server: compile
-	rmic CalculatorImplementation
 	java CalculatorServer & 
 
 run: compile 

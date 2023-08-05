@@ -76,20 +76,19 @@ public class CalculatorClient {
             Calculator c = (Calculator)
                     Naming.lookup(
                             "rmi://localhost/CalculatorService");
+            
+            String token;
+            String rawInput;
+            Scanner stdin = new Scanner(System.in);
 
             while (true) {
-                String token;
-                String rawInput;
-                Scanner stdin = new Scanner(System.in);
                 if (live)
-                    System.out.print(">>");
-                while (stdin.hasNext()){
-                    token = stdin.nextLine().trim();
-                    if (token.equalsIgnoreCase("exit()"))
-                        System.exit(0);
-                    parseInput(token);
-                    executeInput(c);
-                }
+                    System.out.print(">>>");
+                token = stdin.nextLine().trim();
+                if (token.equalsIgnoreCase("exit()"))
+                    System.exit(0);
+                parseInput(token);
+                executeInput(c);
             }
         }
         catch (MalformedURLException murle) {

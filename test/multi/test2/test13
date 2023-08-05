@@ -1,0 +1,4 @@
+pushValue(10)
+pushOperation(lcm)
+pop()
+exit()

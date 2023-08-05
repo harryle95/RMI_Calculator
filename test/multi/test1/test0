@@ -1,0 +1,3 @@
+pushOperation("max")
+pop()
+exit()

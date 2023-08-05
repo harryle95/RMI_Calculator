@@ -1,0 +1,3 @@
+pushValue(100)
+pushOperation(max)
+exit()

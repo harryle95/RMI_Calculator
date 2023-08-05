@@ -1,0 +1,4 @@
+pushValue(100)
+pushOperation(max)
+pop()
+exit()

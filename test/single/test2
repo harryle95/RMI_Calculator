@@ -1,0 +1,8 @@
+pushOperation("max")
+pop()
+pushValue(10)
+pushValue(1)
+pushValue(3)
+pushOperation("min")
+pop()
+exit()

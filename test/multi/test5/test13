@@ -1,0 +1,4 @@
+pushValue(10)
+pushOperation(gcd)
+delayPop(1000)
+exit()

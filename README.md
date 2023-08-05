@@ -1,5 +1,11 @@
 # How to run the program: 
 
+- Run the rmiregistry:
+
+```
+make registry
+```
+
 - Run the server: 
 
 ```
@@ -20,7 +26,7 @@ make clean
 
 ### Using Interractive Shell
 
-Setup the server with `make server` then `make shell`. Simply type in the method to perform the execution.
+Setup the server with `make registry` followed by `make server` then `make shell`. Simply type in the method to perform the execution.
 
 ```
 >>pushValue(100)
@@ -31,6 +37,5 @@ Setup the server with `make server` then `make shell`. Simply type in the method
 100
 >>pop()
 Empty stack
->>
-
+>>exit()
 ```

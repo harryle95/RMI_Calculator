@@ -11,6 +11,7 @@ public class CalculatorClient {
     private static final String pattern = "([^\\(]+)\\(([^\\)]*)\\)";
     private static String method;
     private static String argument;
+    public static boolean live = true;
     
     private static void parseInput(String input){
 
@@ -46,22 +47,26 @@ public class CalculatorClient {
             try{
                 System.out.println(c.pop());
             }catch (RemoteException re){
-                System.out.println("Empty stack");
+                if (live)
+                    System.out.println("Empty stack");
             }
         }else if (method.equalsIgnoreCase("delayPop")){
             try{
                 int val = Integer.parseInt(argument);
                 System.out.println(c.delayPop(val));
             }catch (NumberFormatException nfe){
-                System.out.println("Invalid argument for delayPop: "+argument);
+                if (live)
+                    System.out.println("Invalid argument for delayPop: "+argument);
             }catch (RemoteException re){
-                System.out.println("Empty stack");
+                if (live)
+                    System.out.println("Empty stack");
             }
         }else if (method.equalsIgnoreCase("isEmpty")){
             try{
                 System.out.println(c.isEmpty());
             }catch (RemoteException re){
-                System.out.println("RemoteException: " + re);
+                if (live)
+                    System.out.println("RemoteException: " + re);
             }
         }else{
             System.out.println("Invalid method");
@@ -69,7 +74,7 @@ public class CalculatorClient {
     }
 
     public static void main(String[] args) {
-        boolean live = true;
+
         if (args.length == 1 && args[0].equalsIgnoreCase("-d"))
             live = false;
         try {
@@ -78,7 +83,6 @@ public class CalculatorClient {
                             "rmi://localhost/CalculatorService");
             
             String token;
-            String rawInput;
             Scanner stdin = new Scanner(System.in);
 
             while (true) {

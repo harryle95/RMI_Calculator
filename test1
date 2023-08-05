@@ -1,8 +1,0 @@
-pushValue(100)
-pushValue(200)
-pushOperation("max")
-pop()
-pushValue(300)
-delayPop(10000)
-isEmpty()
-exit()

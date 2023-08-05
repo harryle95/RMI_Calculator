@@ -32,8 +32,8 @@ public class CalculatorImplementation
             result = max();
         else if (operator.equalsIgnoreCase("gcd"))
             result = gcd();
-        else if (operator.equalsIgnoreCase("lcd"))
-            result = lcd();
+        else if (operator.equalsIgnoreCase("lcm"))
+            result = lcm();
         else
             throw new RemoteException("Invalid operator: " + operator);
         pushValue(result);
@@ -100,14 +100,14 @@ public class CalculatorImplementation
         return result;
     }
 
-    private int lcd(int first, int second){
+    private int lcm(int first, int second){
         return first*second/gcd(first, second);
     }
 
-    private int lcd(){
+    private int lcm(){
         int result = operands.pop();
         while(!(operands.isEmpty()))
-            result = lcd(result, operands.pop());
+            result = lcm(result, operands.pop());
         return result;
     }
 }

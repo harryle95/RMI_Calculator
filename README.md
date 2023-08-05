@@ -24,11 +24,19 @@ make shell
 make clean 
 ```
 
-### Interractive Shell
+### Using Interractive Shell
 
-Shell handles basic input with tokens separated by " " and "\n". 
+Setup the server with `make server` then `make shell`. Simply type in the method to perform the execution.
 
-- If token is an integer, perform a pushValue method. 
-- If token is a valid operator (gcd, lcm, max, min), perform the corresponding pushOperation
-- If token is pop, perform a pop and print the result to stdin
-- If token is isEmpty, print the output to stdin 
+```
+>>pushValue(100)
+>>pushValue(200)
+>>pop()
+200
+>>pop()
+100
+>>pop()
+Empty stack
+>>
+
+```

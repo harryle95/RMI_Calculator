@@ -5,6 +5,11 @@ CMD_TO_CLEAN = ["rmiregistry", "java CalculatorServer"]
 
 
 def kill_process(command):
+    """Kill background process performing input command
+
+    Args:
+        command (str): is an item in CMD_TO_CLEAN
+    """
     print(f"Killing process running: {command}")
     processes = check_output("ps -ef| grep rmi", shell=True).decode("utf-8")
     processes = processes.split("\n")

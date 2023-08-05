@@ -1,4 +1,5 @@
 import java.rmi.RemoteException;
+import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class CalculatorImplementation
@@ -40,7 +41,11 @@ public class CalculatorImplementation
 
     @Override
     public int pop() throws RemoteException {
-        return operands.pop();
+        try {
+            return operands.pop();
+        }catch (EmptyStackException e){
+            throw new RemoteException("Stack is Empty");
+        }
     }
 
     @Override

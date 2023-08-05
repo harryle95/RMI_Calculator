@@ -5,9 +5,15 @@ registry:
 	rmiregistry &
 
 server: compile registry
-	rmic CalculatorImplementation &
+	rmic CalculatorImplementation
 	java CalculatorServer & 
+	clear 
 
+run: compile 
+	java CalculatorClient 
+
+shell: compile 
+	java CalculatorClientShell
 
 clean: 
 	python3 cleanUp.py

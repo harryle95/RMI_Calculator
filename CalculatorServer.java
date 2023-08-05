@@ -2,6 +2,7 @@ import java.rmi.Naming;
 
 public class CalculatorServer {
 
+    /* Server constructor, bind image to localhost */
     public CalculatorServer() {
         try {
             Calculator c = new CalculatorImplementation();

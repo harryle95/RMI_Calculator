@@ -1,3 +1,7 @@
+## Environment
+
+On Ubuntu20.04 with sudo priviledge. Using Java SE 11 from openjdk version 11.0.19
+
 ## How to run the program: 
 
 ### Run the rmiregistry:

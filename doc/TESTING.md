@@ -91,7 +91,7 @@ which are the public methods in `Operation.java`. The test inputs and expected o
 
 ## Integeration Tests
 
-Integration test is done by testing the client as a whole. The strategy of the test is to test using input files specifying the commands that a client will invoke and test with expected output (see [the Examples section in DESIGN](DESIGN) for more information).
+Integration test is done by testing the client as a whole. The strategy of the test is to test using input files specifying the commands that a client will invoke and test with expected output (see [the Examples section in DESIGN](DESIGN.md) for more information).
 
 ### Single Client 
 

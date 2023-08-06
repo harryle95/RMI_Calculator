@@ -1,6 +1,6 @@
-PWD=$(pwd)/test/multi/test2
+MYPATH=$(pwd)/test/multi/test2
 
-java CalculatorClient -d < "${PWD}/test0"
-java CalculatorClient -d < "${PWD}/test11" 
-java CalculatorClient -d < "${PWD}/test12" 
-java CalculatorClient -d < "${PWD}/test13" | diff -wEB "${PWD}/output13" -
+java CalculatorClient -d < "${MYPATH}/test0"
+java CalculatorClient -d < "${MYPATH}/test11" 
+java CalculatorClient -d < "${MYPATH}/test12" 
+java CalculatorClient -d < "${MYPATH}/test13" | diff -wEB "${MYPATH}/output13" -

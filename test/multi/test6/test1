@@ -1,0 +1,5 @@
+clear()
+isEmpty()
+pushValue(10)
+isEmpty()
+exit()

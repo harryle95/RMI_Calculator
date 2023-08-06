@@ -1,0 +1,7 @@
+clear()
+pushValue(5)
+pushOperation(gcd)
+pushValue(1)
+pushOperation(lcm)
+pop()
+exit()

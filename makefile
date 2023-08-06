@@ -28,6 +28,8 @@ int_test_multiple: compile
 	bash $(MULTIPLE)/test3/run_test.sh
 	bash $(MULTIPLE)/test4/run_test.sh
 	bash $(MULTIPLE)/test5/run_test.sh
+	bash $(MULTIPLE)/test6/run_test.sh
+	bash $(MULTIPLE)/test7/run_test.sh
 
 test: unit_test int_test_single int_test_multiple
 

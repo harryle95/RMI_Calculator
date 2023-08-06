@@ -1,0 +1,5 @@
+clear()
+pushValue(10)
+pushOperation(gcd)
+pop()
+exit()

@@ -21,7 +21,15 @@ public class ClientConsole {
 
     /*
      * Parse raw input from stdin into operator, operand format.
-     *
+     * Valid input includes:
+     * pushValue(int) - interface pushValue
+     * pushOperation(operator) - interface pushOperation
+     * pop() - interface pop
+     * delayPop(int) - interface delayPop
+     * isEmpty() - interface isEmpty
+     * exit() - exit current shell/terminal program
+     * clear() - clean allocated stack
+     * 
      * Example:
      * "pop()" -> operator: "pop", operand: "null"
      * "pushValue(10)" -> operator: "pushValue", operand: "10"
@@ -55,6 +63,13 @@ public class ClientConsole {
         }
     }
 
+    /*
+     * Execute input on a stub c with client identifier ID
+     * 
+     * Args:
+     * c (Calculator) - stub to execute command remotely
+     * clientID (String) - used to identified stack allocated for client
+     */
     private void executeInput(Calculator c, String clientID) {
         if (method.equalsIgnoreCase("pushValue")) {
             try {
@@ -101,7 +116,7 @@ public class ClientConsole {
             }
         } else if (method.equalsIgnoreCase("exit")) {
             EXIT_PROGRAM = true;
-        } else if (method.equalsIgnoreCase("clear")){
+        } else if (method.equalsIgnoreCase("clear")) {
             try {
                 c.pushOperation("max", clientID);
                 c.pop(clientID);
@@ -109,13 +124,20 @@ public class ClientConsole {
                 if (verbose)
                     System.out.println("Runtime exception: " + e);
             }
-        }
-        else {
+        } else {
             if (verbose)
                 System.out.println("Invalid method");
         }
     }
 
+    /*
+     * Console run. Prompt for user input in interactive shell in a REPL format.
+     * To exit the program, type exit()
+     * 
+     * Args:
+     * c (Calculator): stub to execute command remotely
+     * clientID (String): used to identy the stack allocated to the current client
+     */
     public void run(Calculator c, String clientID) {
         String token;
         Scanner stdin = new Scanner(System.in);
